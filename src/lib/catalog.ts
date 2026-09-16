@@ -120,6 +120,30 @@ export const PRODUCTS: Product[] = [
     puffs: 50000,
     inStock: true,
   },
+  {
+    slug: "rockme-50k-double-apple",
+    name: "Sheesha RockMe 50K — Double Apple",
+    flavor: "frugt",
+    flavorName: "Double Apple",
+    image: "/products/double-apple.jpg",
+    blurb: "Klassisk dobbelt æble. Sødt rødt og skarpt grønt — den rigtige sheesha-smag.",
+    price: 229,
+    compareAt: 249,
+    puffs: 50000,
+    inStock: true,
+  },
+  {
+    slug: "rockme-50k-strawberry-banana",
+    name: "Sheesha RockMe 50K — Strawberry Banana",
+    flavor: "sød",
+    flavorName: "Strawberry Banana",
+    image: "/products/strawberry-banana.jpg",
+    blurb: "Jordbær og banan. Saftig rød bær og cremet banan — blød som en smoothie.",
+    price: 229,
+    compareAt: 249,
+    puffs: 50000,
+    inStock: true,
+  },
 ];
 
 export const SHOP_EMAIL = "pustmore@gmail.com";

@@ -77,7 +77,7 @@ function Home() {
           <p className="text-xs tracking-[0.18em] text-muted-foreground uppercase">Katalog</p>
           <h2 className="font-display text-3xl font-medium tracking-wide uppercase">RockMe 50K</h2>
           <p className="max-w-xl text-sm text-muted-foreground">
-            Viser {list.length} af {list.length} produkter
+            Viser {list.length} af {PRODUCTS.length} produkter
             {list.length === 0 ? "" : " · side 1 af 1"}.
           </p>
         </div>
