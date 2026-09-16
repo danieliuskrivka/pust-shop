@@ -23,7 +23,11 @@ function ProductPage() {
   const add = useShop((s) => s.add);
   if (!product) throw notFound();
   const sale = salePercent(product);
-  const others = PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 4);
+  const idx = PRODUCTS.findIndex((p) => p.slug === product.slug);
+  const others = [...PRODUCTS.slice(idx + 1), ...PRODUCTS.slice(0, Math.max(idx, 0))].slice(
+    0,
+    4,
+  );
 
   return (
     <>

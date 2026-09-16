@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SHOP_EMAIL } from "@/lib/catalog";
+import { SHOP_EMAIL, SHOP_PHONE } from "@/lib/catalog";
 
 export const Route = createFileRoute("/kontakt")({
   component: KontaktPage,
@@ -17,6 +17,10 @@ function KontaktPage() {
         Pust er en dansk webshop. Skriv til{" "}
         <a className="text-foreground underline" href={`mailto:${SHOP_EMAIL}`}>
           {SHOP_EMAIL}
+        </a>{" "}
+        eller ring på{" "}
+        <a className="text-foreground underline" href={`tel:${SHOP_PHONE.replace(/\s/g, "")}`}>
+          {SHOP_PHONE}
         </a>
         , hvis du har spørgsmål til en ordre, levering eller en vare.
       </p>
@@ -24,6 +28,10 @@ function KontaktPage() {
         <p className="text-sm font-medium">E-mail</p>
         <a className="mt-1 block text-sm underline" href={`mailto:${SHOP_EMAIL}`}>
           {SHOP_EMAIL}
+        </a>
+        <p className="mt-4 text-sm font-medium">Telefon</p>
+        <a className="mt-1 block text-sm underline" href={`tel:${SHOP_PHONE.replace(/\s/g, "")}`}>
+          {SHOP_PHONE}
         </a>
         <p className="mt-4 text-sm font-medium">Ordrer</p>
         <p className="mt-1 text-sm text-muted-foreground">

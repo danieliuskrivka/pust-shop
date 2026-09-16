@@ -27,12 +27,8 @@ function CookiesPage() {
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              <span className="text-foreground">pust-shop-v1</span> — kurv i din browser. Uden den
-              kan du ikke handle.
-            </li>
-            <li>
-              <span className="text-foreground">pust-consent-v1</span> — husker, at du har set
-              cookieinformationen.
+              <span className="text-foreground">pust-shop-v1</span> — kurv og at du har set
+              cookieinformationen. Uden den kan du ikke handle.
             </li>
           </ul>
         </section>

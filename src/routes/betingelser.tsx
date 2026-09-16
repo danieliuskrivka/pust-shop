@@ -17,6 +17,13 @@ function BetingelserPage() {
           Disse betingelser gælder for køb på pustmore.com. Sælger er Pust.
         </p>
         <section>
+          <h2 className="font-medium text-foreground">Alderskrav</h2>
+          <p className="mt-2">
+            Du skal være fyldt 18 år for at købe. Produkterne indeholder nikotin, som er
+            vanedannende. Vi sælger ikke til mindreårige.
+          </p>
+        </section>
+        <section>
           <h2 className="font-medium text-foreground">Priser og betaling</h2>
           <p className="mt-2">
             Priser er i danske kroner og inkluderer moms. Du betaler kun med Stripe (kort, Apple Pay

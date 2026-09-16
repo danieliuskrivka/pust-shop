@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { cartCount, useShop } from "@/lib/cart-store";
-import { formatKr, getProduct, SHIPPING, shippingCost, type ShippingId } from "@/lib/catalog";
+import { formatKr, getProduct, SHIPPING, shippingCost, SHOP_EMAIL, type ShippingId } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
 
 export function ShopShell({ children }: { children: ReactNode }) {
@@ -192,10 +192,17 @@ export function ShopShell({ children }: { children: ReactNode }) {
                   Skriv til butikken
                 </Link>
               </li>
+              <li>
+                <a className="text-foreground hover:underline" href={`mailto:${SHOP_EMAIL}`}>
+                  {SHOP_EMAIL}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <p className="mx-auto mt-10 max-w-6xl text-xs text-muted-foreground">© 2026 Pust.</p>
+        <p className="mx-auto mt-10 max-w-6xl text-xs text-muted-foreground">
+          © 2026 Pust. 18+. Produkterne indeholder nikotin, som er vanedannende.
+        </p>
       </footer>
 
       {!cookieSeen ? (
@@ -297,17 +304,19 @@ function CartSheet({
             })}
           </ul>
         )}
-        <div className="mt-6 border-t border-border pt-4">
-          <p className="flex justify-between text-sm">
-            <span>Varer</span>
-            <span className="tabular">{formatKr(subtotal)}</span>
-          </p>
-          <Button className="mt-4 w-full" size="lg" asChild>
-            <Link to="/kasse" onClick={() => onOpenChange(false)}>
-              Gå til kassen
-            </Link>
-          </Button>
-        </div>
+        {cart.length > 0 ? (
+          <div className="mt-6 border-t border-border pt-4">
+            <p className="flex justify-between text-sm">
+              <span>Varer</span>
+              <span className="tabular">{formatKr(subtotal)}</span>
+            </p>
+            <Button className="mt-4 w-full" size="lg" asChild>
+              <Link to="/kasse" onClick={() => onOpenChange(false)}>
+                Gå til kassen
+              </Link>
+            </Button>
+          </div>
+        ) : null}
       </SheetContent>
     </Sheet>
   );
@@ -348,7 +357,7 @@ export function ShippingRadio({
               </span>
               <span className="mt-1 block text-muted-foreground">
                 {method.description} {method.eta}.
-                {method.freeOver > 0 ? ` Gratis fra ${formatKr(method.freeOver)}.` : ""}
+                {method.freeOver > 0 ? ` Gratis fra ${formatKr(method.freeOver)}` : ""}
               </span>
             </span>
           </label>

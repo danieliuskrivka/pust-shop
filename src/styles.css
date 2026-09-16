@@ -109,6 +109,18 @@
 .stagger-in > *:nth-child(8) {
   animation-delay: 320ms;
 }
+.stagger-in > *:nth-child(9) {
+  animation-delay: 360ms;
+}
+.stagger-in > *:nth-child(10) {
+  animation-delay: 400ms;
+}
+.stagger-in > *:nth-child(11) {
+  animation-delay: 440ms;
+}
+.stagger-in > *:nth-child(12) {
+  animation-delay: 480ms;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .rise-in,
