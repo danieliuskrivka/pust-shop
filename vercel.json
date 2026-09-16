@@ -1,4 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "framework": null,
+  "buildCommand": "VITE_AUTH_ENABLED=false npm run build",
   "installCommand": "npm install"
 }
