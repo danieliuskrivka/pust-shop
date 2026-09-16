@@ -1,0 +1,15 @@
+node_modules
+.vercel
+.output
+.nitro
+.tanstack
+dist
+artifacts
+screenshots
+attachments
+.grok
+*.log
+.DS_Store
+.env
+.env.*
+!src/lib/env.server.ts

@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  --color-background: #0c0c0e;
+  --color-foreground: #f3f1ec;
+  --color-card: #141416;
+  --color-card-foreground: #f3f1ec;
+  --color-popover: #1a1a1d;
+  --color-popover-foreground: #f3f1ec;
+  --color-primary: #d8ddd4;
+  --color-primary-foreground: #0c0c0e;
+  --color-secondary: #1c1c20;
+  --color-secondary-foreground: #f3f1ec;
+  --color-muted: #1c1c20;
+  --color-muted-foreground: #9a9892;
+  --color-accent: #222226;
+  --color-accent-foreground: #f3f1ec;
+  --color-destructive: #b4584d;
+  --color-destructive-foreground: #f3f1ec;
+  --color-border: #2a2a2e;
+  --color-input: #2a2a2e;
+  --color-ring: #d8ddd4;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-border: 0 0 0 1px #f3f1ec14;
+  --shadow-border-hover: 0 0 0 1px #f3f1ec29;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-quick: 0.18s;
+  --motion-fast: 0.32s;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-background);
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: 0.02em;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  img {
+    outline: 1px solid rgb(243 241 236 / 0.08);
+    outline-offset: -1px;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise-in {
+  animation: rise-in var(--motion-fast) var(--ease-out) both;
+}
+
+.stagger-in > * {
+  animation: rise-in var(--motion-fast) var(--ease-out) both;
+}
+.stagger-in > *:nth-child(1) {
+  animation-delay: 40ms;
+}
+.stagger-in > *:nth-child(2) {
+  animation-delay: 80ms;
+}
+.stagger-in > *:nth-child(3) {
+  animation-delay: 120ms;
+}
+.stagger-in > *:nth-child(4) {
+  animation-delay: 160ms;
+}
+.stagger-in > *:nth-child(5) {
+  animation-delay: 200ms;
+}
+.stagger-in > *:nth-child(6) {
+  animation-delay: 240ms;
+}
+.stagger-in > *:nth-child(7) {
+  animation-delay: 280ms;
+}
+.stagger-in > *:nth-child(8) {
+  animation-delay: 320ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .stagger-in > * {
+    animation: none;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
