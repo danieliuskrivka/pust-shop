@@ -65,7 +65,7 @@ function Home() {
             </p>
           </div>
           <img
-            src="/products/hero.jpg"
+            src="https://raw.githubusercontent.com/danieliuskrivka/pust-shop/main/public/products/hero.jpg"
             alt="Sheesha RockMe 50K"
             className="aspect-3/4 w-full rounded-2xl object-cover shadow-[var(--shadow-border)] rise-in"
           />
